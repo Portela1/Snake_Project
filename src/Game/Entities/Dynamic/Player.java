@@ -84,14 +84,17 @@ public class Player {
                     yCoord++;
                 }
                 break;
-        }
-        handler.getWorld().playerLocation[xCoord][yCoord]=true;
+		}
+		handler.getWorld().playerLocation[xCoord][yCoord] = true;
 
-
+		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_N)) { //Implementing Next Level
+            handler.getWorld().body.add(new Tail(x, y,handler));
+		}
+        
         if(handler.getWorld().appleLocation[xCoord][yCoord]){
             Eat();
         }
-
+       
         if(!handler.getWorld().body.isEmpty()) {
             handler.getWorld().playerLocation[handler.getWorld().body.getLast().x][handler.getWorld().body.getLast().y] = false;
             handler.getWorld().body.removeLast();
@@ -223,6 +226,7 @@ public class Player {
                 }
                 break;
         }
+
         handler.getWorld().body.addLast(tail);
         handler.getWorld().playerLocation[tail.x][tail.y] = true;
     }
