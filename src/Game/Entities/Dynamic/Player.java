@@ -34,6 +34,13 @@ public class Player {
     }
 
     public void tick(){
+    	
+        int x = xCoord;
+        int y = yCoord;
+    	
+		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_N)) { //Implementing Next Level
+            handler.getWorld().body.add(new Tail(x, y,handler));
+		}
         moveCounter++;
         if(moveCounter>=5) {
             checkCollisionAndMove();
@@ -86,10 +93,6 @@ public class Player {
                 break;
 		}
 		handler.getWorld().playerLocation[xCoord][yCoord] = true;
-
-		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_N)) { //Implementing Next Level
-            handler.getWorld().body.add(new Tail(x, y,handler));
-		}
         
         if(handler.getWorld().appleLocation[xCoord][yCoord]){
             Eat();
