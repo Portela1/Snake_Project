@@ -14,6 +14,8 @@ public class KeyManager implements KeyListener {
 	public boolean up=false, down=false, left=false, right=false;
 	public boolean pbutt=false;
 	public boolean n=false; 
+	public boolean minusbutt=false, plusbutt=false; 
+	
 
 
 	public KeyManager(){
@@ -45,6 +47,8 @@ public class KeyManager implements KeyListener {
 
 		pbutt = keys[KeyEvent.VK_ESCAPE];
 		n = keys[KeyEvent.VK_N];
+		minusbutt = keys[KeyEvent.VK_LESS];
+		plusbutt = keys[KeyEvent.VK_EQUALS];
 
 	}
 
