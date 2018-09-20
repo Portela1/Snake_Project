@@ -41,6 +41,11 @@ public class Player {
 		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_N)) { //Implementing Next Level
             handler.getWorld().body.add(new Tail(x, y,handler));
 		}
+//		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_EQUALS)){
+//			moveCounter ;	
+//		}else if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_LESS)) {
+//			moveCounter--;
+//		}
         moveCounter++;
         if(moveCounter>=5) {
             checkCollisionAndMove();
