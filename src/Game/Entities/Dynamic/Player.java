@@ -48,6 +48,16 @@ public class Player {
 		if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_MINUS)) { // decrease snake speed
 			speedSnake++;
 		}
+		if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_P)) { //pause snake
+			speedSnake = 200;
+		}
+		if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_O)) { //return to default speed snake
+			speedSnake = 5;
+		}
+		
+		
+		
+		
         moveCounter++;
         if(moveCounter>=speedSnake) {
             checkCollisionAndMove();
