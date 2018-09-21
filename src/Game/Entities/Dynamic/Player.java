@@ -245,7 +245,7 @@ public class Player {
         }
 
         handler.getWorld().body.addLast(tail);
-        handler.getWorld().playerLocation[tail.x][tail.y] = true;
+        handler.getWorld().playerLocation[tail.x][tail.y] = false;
     }
 
     public void kill(){
