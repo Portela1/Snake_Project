@@ -43,10 +43,10 @@ public class Player {
             handler.getWorld().body.add(new Tail(x, y,handler));
 		}
 		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_EQUALS)){ // increase snake speed
-			speedSnake++;	
+			speedSnake--;	
 		} 
 		if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_MINUS)) { // decrease snake speed
-			speedSnake--;
+			speedSnake++;
 		}
         moveCounter++;
         if(moveCounter>=speedSnake) {
@@ -252,7 +252,7 @@ public class Player {
         for (int i = 0; i < handler.getWorld().GridWidthHeightPixelCount; i++) {
             for (int j = 0; j < handler.getWorld().GridWidthHeightPixelCount; j++) {
 
-                handler.getWorld().playerLocation[i][j]=false;
+                handler.getWorld().playerLocation[i][j]=true;
 
             }
         }
