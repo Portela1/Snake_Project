@@ -19,6 +19,7 @@ public class Player {
     public int yCoord;
 
     public int moveCounter;
+    public int speedSnake = 5;
 
     public String direction;//is your first name one?
 
@@ -38,11 +39,17 @@ public class Player {
         int x = xCoord;
         int y = yCoord;
     	
-		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_N)) { //Implementing Next Level
+		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_N)) { // add tail
             handler.getWorld().body.add(new Tail(x, y,handler));
 		}
+		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_EQUALS)){ // increase snake speed
+			speedSnake--;	
+		} 
+		if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_MINUS)) { // decrease snake speed
+			speedSnake++;
+		}
         moveCounter++;
-        if(moveCounter>=5) {
+        if(moveCounter>=speedSnake) {
             checkCollisionAndMove();
             moveCounter=2; //Change snake Speed
         }
@@ -63,6 +70,12 @@ public class Player {
         handler.getWorld().playerLocation[xCoord][yCoord]=false;
         int x = xCoord;
         int y = yCoord;
+        
+		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_EQUALS)) {
+			moveCounter = 3;
+		} else if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_LESS)) {
+			moveCounter = 1;
+		}
         switch (direction){
             case "Left":
                 if(xCoord==0){
@@ -240,7 +253,7 @@ public class Player {
         for (int i = 0; i < handler.getWorld().GridWidthHeightPixelCount; i++) {
             for (int j = 0; j < handler.getWorld().GridWidthHeightPixelCount; j++) {
 
-                handler.getWorld().playerLocation[i][j]=false;
+                handler.getWorld().playerLocation[i][j]=true;
 
             }
         }
