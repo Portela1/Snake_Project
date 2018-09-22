@@ -57,11 +57,9 @@ public class GameState extends State {
         handler.getWorld().tick();
         
         if(handler.getKeyManager().p) {
-       	 
-            State.setState(handler.getGame().pauseState);
+        	State.setState(handler.getGame().pauseState);
         } 
-        
-
+       
     }
 
     @Override

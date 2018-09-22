@@ -23,7 +23,7 @@ public class Player {
     public int moveCounter;
     public int speedSnake = 5;
 
-    public String direction;//is your first name one?
+    public static String direction;//is your first name one?
 
     public Player(Handler handler){
         this.handler = handler;
@@ -56,6 +56,7 @@ public class Player {
 		if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_O)) { //return to default speed snake
 			speedSnake = 5;
 		}
+	
 		
 		
 		
@@ -66,16 +67,41 @@ public class Player {
             moveCounter=2; //Change snake Speed
         }
         if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_UP)){
-            direction="Up";
+        	if(direction == "Down")
+        	{
+        		State.setState(handler.getGame().pauseState);
+        	}
+        	else {
+        		direction="Up";
+        	}
+            
         }if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_DOWN)){
-            direction="Down";
+        	if(direction == "Up")
+        	{
+        		State.setState(handler.getGame().pauseState);
+        	}
+        	else {
+        		direction="Down";
+        	}
+      
         }if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_LEFT)){
-            direction="Left";
+            if(direction == "Right")
+        	{
+        		State.setState(handler.getGame().pauseState);
+        	}
+        	else {
+        		direction="Left";
+        	}
+   
         }if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_RIGHT)){
-            direction="Right";
+        	 if(direction == "Left")
+         	{
+         		State.setState(handler.getGame().pauseState);
+         	}
+         	else {
+         		direction="Right";
+         	}
         }
-        
-
     }
 
     public void checkCollisionAndMove(){
