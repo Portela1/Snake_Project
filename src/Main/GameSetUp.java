@@ -84,7 +84,7 @@ public class GameSetUp implements Runnable {
         gameState = new GameState(handler);
         menuState = new MenuState(handler);
         pauseState = new PauseState(handler);
-        optionState = new OptionState(handler);
+        optionState = new OptionState(handler); // Option State added
 
       
   
