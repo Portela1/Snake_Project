@@ -69,7 +69,7 @@ public class Player {
         if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_UP)){
         	if(direction == "Down")
         	{
-        		State.setState(handler.getGame().pauseState);
+        		State.setState(handler.getGame().pauseState);                    
         	}
         	else {
         		direction="Up";
@@ -97,7 +97,7 @@ public class Player {
         	 if(direction == "Left")
          	{
          		State.setState(handler.getGame().pauseState);
-         	}
+         	}															
          	else {
          		direction="Right";
          	}
