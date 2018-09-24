@@ -18,16 +18,30 @@ public class Images {
     public static BufferedImage[] BTitle;
     public static BufferedImage[] Options;
     public static ImageIcon icon;
-
+   // public static BufferedImage Red[]; //Added
+   // public static BufferedImage[] Blue; //Added
+   // public static BufferedImage[] Green; //Added
+    
+    
     public Images() {
 
         butstart = new BufferedImage[3];
         Resume = new BufferedImage[2];
         BTitle = new BufferedImage[2];
         Options = new BufferedImage[2];
-
+       // Red = new BufferedImage[0];//Added
+       // Blue = new BufferedImage[1]; //Added
+       // Green = new BufferedImage[1]; //Added
+        
         try {
-
+        	
+        	
+        	//Red[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/color_word_red.png"));
+        	//Blue[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/color_word_blue.png"));
+        	//Green[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/green.png"));
+        	
+        	
+        	
             title = ImageIO.read(getClass().getResourceAsStream("/Sheets/Title.png"));
             Pause = ImageIO.read(getClass().getResourceAsStream("/Buttons/Pause.png"));
             Resume[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/Resume.png"));
