@@ -1,6 +1,7 @@
 package Game.Entities.Dynamic;
 
 import Main.Handler;
+import Resources.Images;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -292,6 +293,10 @@ public class Player {
             for (int j = 0; j < handler.getWorld().GridWidthHeightPixelCount; j++) {
 
                 handler.getWorld().playerLocation[i][j]=true;
+                State.setState(handler.getGame().gameOverState);
+                
+      
+
 
             }
         }
@@ -304,4 +309,5 @@ public class Player {
     public void setJustAte(boolean justAte) {
         this.justAte = justAte;
     }
+    
 }

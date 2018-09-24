@@ -1,6 +1,7 @@
 package Main;
 
 import Display.DisplayScreen;
+import Game.GameStates.GameOverState;
 import Game.GameStates.GameState;
 import Game.GameStates.MenuState;
 import Game.GameStates.OptionState;
@@ -47,7 +48,12 @@ public class GameSetUp implements Runnable {
     public State gameState;
     public State menuState;
     public State pauseState;
+
     public State optionState; //Option State added
+
+    public State gameOverState;
+    
+
 
     //Res.music
     private InputStream audioFile;
@@ -84,12 +90,16 @@ public class GameSetUp implements Runnable {
         gameState = new GameState(handler);
         menuState = new MenuState(handler);
         pauseState = new PauseState(handler);
+
         optionState = new OptionState(handler); // Option State added
 
       
   
         
         
+
+        gameOverState= new GameOverState(handler);
+
         State.setState(menuState);
 
         try {
