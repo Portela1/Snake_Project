@@ -20,22 +20,51 @@ public class OptionState extends State {
         super(handler);
         uiManager = new UIManager(handler);
         handler.getMouseManager().setUimanager(uiManager);
+        
+        
+        
+        //Snake Color
 
 
-        uiManager.addObjects(new UIImageButton(handler.getWidth()/2-100, 400, 60, 30, Images.Options, () -> {
+        uiManager.addObjects(new UIImageButton(handler.getWidth()/2-10, 400, 30, 10, Images.Red, () -> {
             handler.getMouseManager().setUimanager(null);
-            State.setState(handler.getGame().optionState);
+            State.setState(handler.getGame().menuState);
         }));
         
-        uiManager.addObjects(new UIImageButton(handler.getWidth()/2-100, 450, 60, 30, Images.Options, () -> {
+        uiManager.addObjects(new UIImageButton(handler.getWidth()/2+40, 400, 30, 10, Images.Green, () -> {
             handler.getMouseManager().setUimanager(null);
-            State.setState(handler.getGame().optionState);
+            State.setState(handler.getGame().menuState);
         }));
         
-        uiManager.addObjects(new UIImageButton(handler.getWidth()/2-100, 500, 60, 30, Images.Options, () -> {
+        uiManager.addObjects(new UIImageButton(handler.getWidth()/2+90, 400, 30, 10, Images.Blue, () -> {
             handler.getMouseManager().setUimanager(null);
-            State.setState(handler.getGame().optionState);
+            State.setState(handler.getGame().menuState);
         }));
+        
+        
+        //Back Color
+        
+        
+        uiManager.addObjects(new UIImageButton(handler.getWidth()/2-10, 450, 30, 10, Images.Red, () -> {
+            handler.getMouseManager().setUimanager(null);
+            State.setState(handler.getGame().menuState);
+        }));
+        
+        uiManager.addObjects(new UIImageButton(handler.getWidth()/2+45, 450, 30, 10, Images.Green, () -> {
+            handler.getMouseManager().setUimanager(null);
+            State.setState(handler.getGame().menuState);
+        }));
+        
+        uiManager.addObjects(new UIImageButton(handler.getWidth()/2+95, 450, 30, 10, Images.Blue, () -> {
+            handler.getMouseManager().setUimanager(null);
+            State.setState(handler.getGame().menuState);
+        }));
+        
+        
+        
+        //Snake Speed
+        
+        
         
         
         
@@ -61,6 +90,7 @@ public class OptionState extends State {
         g.setColor(Color.darkGray);
         g.fillRect(0,0,handler.getWidth(),handler.getHeight());
         g.drawImage(Images.title,0,0,handler.getWidth(),handler.getHeight(),null);
+      
         uiManager.Render(g);
 
     }

@@ -20,9 +20,9 @@ public class Images {
     public static BufferedImage[] Options;
 //    public static BufferedImage[] BMainMenu;
     public static ImageIcon icon;
-   // public static BufferedImage Red[]; //Added
-   // public static BufferedImage[] Blue; //Added
-   // public static BufferedImage[] Green; //Added
+    public static BufferedImage[] Red; //Added
+    public static BufferedImage[] Blue; //Added
+    public static BufferedImage[] Green; //Added
     
     
     public Images() {
@@ -31,17 +31,21 @@ public class Images {
         Resume = new BufferedImage[2];
         BTitle = new BufferedImage[3];
         Options = new BufferedImage[2];
-       // Red = new BufferedImage[0];//Added
-       // Blue = new BufferedImage[1]; //Added
-       // Green = new BufferedImage[1]; //Added
+        Red = new BufferedImage[2];//Added
+        Blue = new BufferedImage[2]; //Added
+        Green = new BufferedImage[2]; //Added
         
         try {
         	
         	
-        	//Red[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/color_word_red.png"));
-        	//Blue[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/color_word_blue.png"));
-        	//Green[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/green.png"));
+        	Red[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/color_word_red.png.png"));
+        	Red[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/color_word_red.png.png"));
         	
+        	Blue[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/color_word_blue.png"));
+        	Blue[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/color_word_blue.png"));
+        	
+        	Green[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/green.png"));
+        	Green[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/green.png"));
         	
         	
             title = ImageIO.read(getClass().getResourceAsStream("/Sheets/Title.png"));
