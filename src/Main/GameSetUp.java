@@ -90,7 +90,6 @@ public class GameSetUp implements Runnable {
         gameState = new GameState(handler);
         menuState = new MenuState(handler);
         pauseState = new PauseState(handler);
-
         optionState = new OptionState(handler); // Option State added
 
       
@@ -104,7 +103,7 @@ public class GameSetUp implements Runnable {
 
         try {
 
-            audioFile = getClass().getResourceAsStream("/music/nature.wav");
+            audioFile = getClass().getResourceAsStream("/music/EoT.wav");
             audioStream = AudioSystem.getAudioInputStream(audioFile);
             format = audioStream.getFormat();
             info = new DataLine.Info(Clip.class, format);
@@ -137,6 +136,9 @@ public class GameSetUp implements Runnable {
     public void run(){
 
         //initiallizes everything in order to run without breaking
+    	
+    	
+    	
         init();
 
         int fps = 60;

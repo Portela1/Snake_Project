@@ -44,7 +44,7 @@ public class OptionState extends State {
 
         uiManager.addObjects(new UIImageButton(handler.getWidth()/2-10, 400, 30, 10, Images.Red, () -> {
             handler.getMouseManager().setUimanager(null);
-            
+            //g.setColor(Color.GREEN);
         }));
         
         uiManager.addObjects(new UIImageButton(handler.getWidth()/2+40, 400, 30, 10, Images.Green, () -> {
