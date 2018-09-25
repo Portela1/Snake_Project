@@ -44,7 +44,7 @@ public class OptionState extends State {
         
         //Back Color
         
-        
+     
         uiManager.addObjects(new UIImageButton(handler.getWidth()/2-10, 450, 30, 10, Images.Red, () -> {
             handler.getMouseManager().setUimanager(null);
             State.setState(handler.getGame().menuState);
@@ -89,8 +89,11 @@ public class OptionState extends State {
     public void render(Graphics g) {
         g.setColor(Color.darkGray);
         g.fillRect(0,0,handler.getWidth(),handler.getHeight());
+        
         g.drawImage(Images.title,0,0,handler.getWidth(),handler.getHeight(),null);
-      
+        g.drawImage(Images.speed , handler.getWidth()/2-90 , 490, 60 , 30 ,null);
+        g.drawImage(Images.backgroundc,handler.getWidth()/2-90, 440,60,30,null); 
+        g.drawImage(Images.snakec,handler.getWidth()/2-90,390,60,30,null);
         uiManager.Render(g);
 
     }

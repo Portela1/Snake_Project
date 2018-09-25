@@ -23,6 +23,10 @@ public class Images {
     public static BufferedImage[] Red; //Added
     public static BufferedImage[] Blue; //Added
     public static BufferedImage[] Green; //Added
+    public static BufferedImage backgroundc; //Added
+    public static BufferedImage speed; //Added
+    public static BufferedImage snakec; //Added
+    
     
     
     public Images() {
@@ -47,6 +51,9 @@ public class Images {
         	Green[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/green.png"));
         	Green[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/green.png"));
         	
+        	speed = ImageIO.read(getClass().getResourceAsStream("/Sheets/Speed.png"));
+        	backgroundc = ImageIO.read(getClass().getResourceAsStream("/Sheets/Backgorund.png"));
+        	snakec = ImageIO.read(getClass().getResourceAsStream("/Sheets/Snake Color.png"));
         	
             title = ImageIO.read(getClass().getResourceAsStream("/Sheets/Title.png"));
             Pause = ImageIO.read(getClass().getResourceAsStream("/Buttons/Pause.png"));
