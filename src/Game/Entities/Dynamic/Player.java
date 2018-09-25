@@ -70,7 +70,7 @@ public class Player {
         if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_UP)){
         	if(direction == "Down")
         	{
-        		State.setState(handler.getGame().pauseState);                    
+        		State.setState(handler.getGame().gameOverState);                    
         	}
         	else {
         		direction="Up";
@@ -79,7 +79,7 @@ public class Player {
         }if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_DOWN)){
         	if(direction == "Up")
         	{
-        		State.setState(handler.getGame().pauseState);
+        		State.setState(handler.getGame().gameOverState);
         	}
         	else {
         		direction="Down";
@@ -88,7 +88,7 @@ public class Player {
         }if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_LEFT)){
             if(direction == "Right")
         	{
-        		State.setState(handler.getGame().pauseState);
+        		State.setState(handler.getGame().gameOverState);
         	}
         	else {
         		direction="Left";
@@ -97,7 +97,7 @@ public class Player {
         }if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_RIGHT)){
         	 if(direction == "Left")
          	{
-         		State.setState(handler.getGame().pauseState);
+         		State.setState(handler.getGame().gameOverState);
          	}															
          	else {
          		direction="Right";
