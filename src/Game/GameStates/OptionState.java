@@ -27,6 +27,18 @@ public class OptionState extends State {
         
    
         
+        
+        
+        //Resume
+        
+        
+        uiManager.addObjects(new UIImageButton(handler.getWidth()/2-50, 550, 128, 64, Images.Resume, () -> {
+            handler.getMouseManager().setUimanager(null);
+            State.setState(handler.getGame().gameState);
+        }));
+        
+        
+        
         //Snake Color
 
 
@@ -44,19 +56,14 @@ public class OptionState extends State {
             handler.getMouseManager().setUimanager(null);
             
         }));
+       
         
-        
-        
-        
-        
+          
         //Back Color
        
         uiManager.addObjects(new UIImageButton(handler.getWidth()/2-10, 450, 30, 10, Images.Red, () -> {
             handler.getMouseManager().setUimanager(null);
             DisplayScreen.ChangeColor(DisplayScreen.getCanvas(),Color.RED);
-            
-         
-            
         }));
         
         uiManager.addObjects(new UIImageButton(handler.getWidth()/2+40, 450, 30, 10, Images.Green, () -> {

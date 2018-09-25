@@ -45,7 +45,7 @@ public class DisplayScreen {
 
         
         
-        buildCanvas(width, height,false,Color.BLUE); // Added 
+        buildCanvas(width, height,false,Color.ORANGE); // Added 
        
         
         

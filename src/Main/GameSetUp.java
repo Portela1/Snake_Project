@@ -79,8 +79,8 @@ public class GameSetUp implements Runnable {
         display.getFrame().addKeyListener(keyManager);
         display.getFrame().addMouseListener(mouseManager);
         display.getFrame().addMouseMotionListener(mouseManager);
-        display.getCanvas().addMouseListener(mouseManager);
-        display.getCanvas().addMouseMotionListener(mouseManager);
+        DisplayScreen.getCanvas().addMouseListener(mouseManager);
+        DisplayScreen.getCanvas().addMouseMotionListener(mouseManager);
 
         Images img = new Images();
 
