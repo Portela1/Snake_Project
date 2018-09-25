@@ -23,6 +23,7 @@ public class Player {
 
     public int moveCounter;
     public int speedSnake = 5;
+    public int snakeScore = 0;
 
     public static String direction;//is your first name one?
 
@@ -44,6 +45,7 @@ public class Player {
     	
 		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_N)) { // add tail
             handler.getWorld().body.add(new Tail(x, y,handler));
+            lenght ++;
 		}
 		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_EQUALS)){ // increase snake speed
 			speedSnake--;	
@@ -63,47 +65,34 @@ public class Player {
 		
 		
         moveCounter++;
-        if(moveCounter>=speedSnake) {
-            checkCollisionAndMove();
-            moveCounter=2; //Change snake Speed
-        }
-        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_UP)){
-        	if(direction == "Down")
-        	{
-        		State.setState(handler.getGame().gameOverState);                    
-        	}
-        	else {
-        		direction="Up";
-        	}
-            
-        }if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_DOWN)){
-        	if(direction == "Up")
-        	{
-        		State.setState(handler.getGame().gameOverState);
-        	}
-        	else {
-        		direction="Down";
-        	}
-      
-        }if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_LEFT)){
-            if(direction == "Right")
-        	{
-        		State.setState(handler.getGame().gameOverState);
-        	}
-        	else {
-        		direction="Left";
-        	}
-   
-        }if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_RIGHT)){
-        	 if(direction == "Left")
-         	{
-         		State.setState(handler.getGame().gameOverState);
-         	}															
-         	else {
-         		direction="Right";
-         	}
-        }
-    }
+		if (moveCounter >= speedSnake) {
+			checkCollisionAndMove();
+			moveCounter = 2; // Change snake Speed
+		}
+		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_UP)) {
+			if (direction != "Down") { //Prevent Backtracking
+				direction = "Up";
+			}
+
+		}
+		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_DOWN)) {
+			if (direction != "Up") { //Prevent Backtracking
+				direction = "Down";
+			}
+
+		}
+		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_RIGHT)) {
+			if (direction != "Left") { //Prevent Backtracking
+				direction = "Right";
+			}
+
+		}
+		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_LEFT)) {
+			if (direction != "Right") { //Prevent Backtracking
+				direction = "Left";
+			}
+		}
+	}
 
     public void checkCollisionAndMove(){
         handler.getWorld().playerLocation[xCoord][yCoord]=false;
@@ -166,7 +155,11 @@ public class Player {
                             (j*handler.getWorld().GridPixelsize),
                             handler.getWorld().GridPixelsize,
                             handler.getWorld().GridPixelsize);
+   
                 }
+//                g.setColor(Color.RED);
+//                g.setFont (new Font("arial", Font.BOLD, 14));
+//                g.drawString("SCORE: " +snakeScore, 540, 20);
 
             }
         }
@@ -176,6 +169,7 @@ public class Player {
 
     public void Eat(){
         lenght++;
+        snakeScore++;
         Tail tail= null;
         handler.getWorld().appleLocation[xCoord][yCoord]=false;
         handler.getWorld().appleOnBoard=false;

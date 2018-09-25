@@ -17,6 +17,7 @@ public class Images {
     public static BufferedImage GameOver;
     public static BufferedImage[] Resume;
     public static BufferedImage[] BTitle;
+    public static BufferedImage[] BMenu;
     public static BufferedImage[] Options;
 //    public static BufferedImage[] BMainMenu;
     public static ImageIcon icon;
@@ -30,6 +31,7 @@ public class Images {
         butstart = new BufferedImage[3];
         Resume = new BufferedImage[2];
         BTitle = new BufferedImage[3];
+        BMenu = new BufferedImage[2];
         Options = new BufferedImage[2];
        // Red = new BufferedImage[0];//Added
        // Blue = new BufferedImage[1]; //Added
@@ -51,7 +53,8 @@ public class Images {
             Resume[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/ResumeP.png"));
             BTitle[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/BTitle.png"));
             BTitle[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/BTitleP.png"));
-            BTitle[2] = ImageIO.read(getClass().getResourceAsStream("/Buttons/BTitleM.png")); //Main menu button
+            BMenu[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/BMenu.png")); //Main menu button
+            BMenu[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/BMenu.png")); //Main menu button
             Options[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/Options.png"));
             Options[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/OptionsP.png"));
             butstart[0]= ImageIO.read(getClass().getResourceAsStream("/Buttons/NormBut.png"));//normbut
