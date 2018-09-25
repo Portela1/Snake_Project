@@ -13,15 +13,16 @@ import javax.swing.*;
 public class DisplayScreen {
 
     private JFrame frame;
-    private Canvas canvas;
+    public static Canvas canvas;
     private String title;
     private int width, height;
+	
 
     public DisplayScreen(String title, int width, int height){
         this.title = title;
         this.width = width;
         this.height = height;
-
+      
 
 
         createDisplay();
@@ -42,19 +43,37 @@ public class DisplayScreen {
             e.printStackTrace();
         }
 
-        canvas = new Canvas();
-        canvas.setPreferredSize(new Dimension(width, height));
-        canvas.setMaximumSize(new Dimension(width, height));
-        canvas.setMinimumSize(new Dimension(width, height));
-        canvas.setFocusable(false);
-        canvas.setBackground(Color.YELLOW); //Change Background Color
-
+        
+        
+        buildCanvas(width, height,false,Color.BLUE); // Added 
+       
+        
+        
+        
+        
         frame.add(canvas);
         frame.pack();
     }
 
-    public Canvas getCanvas(){
+    public static Canvas getCanvas(){
         return canvas;
+    }
+    
+    
+    public static void ChangeColor(Canvas c,Color color)
+    {
+    	c.setBackground(color);
+    }
+   
+    public Canvas buildCanvas(int width,int height, Boolean focus, Color c) {
+    	  canvas = new Canvas();
+          canvas.setPreferredSize(new Dimension(width, height));                //Added
+          canvas.setMaximumSize(new Dimension(width, height));                  //Added
+          canvas.setMinimumSize(new Dimension(width, height));
+          canvas.setFocusable(focus);
+          canvas.setBackground(c); 
+    	return canvas;
+    	
     }
 
     public JFrame getFrame(){

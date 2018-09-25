@@ -9,6 +9,7 @@ import UI.UIManager;
 
 import java.awt.*;
 
+import Display.DisplayScreen;
 import Game.Entities.Dynamic.Player;
 
 /**
@@ -31,18 +32,17 @@ public class OptionState extends State {
 
         uiManager.addObjects(new UIImageButton(handler.getWidth()/2-10, 400, 30, 10, Images.Red, () -> {
             handler.getMouseManager().setUimanager(null);
-            State.setState(handler.getGame().menuState);
             
         }));
         
         uiManager.addObjects(new UIImageButton(handler.getWidth()/2+40, 400, 30, 10, Images.Green, () -> {
             handler.getMouseManager().setUimanager(null);
-            State.setState(handler.getGame().menuState);
+            
         }));
         
         uiManager.addObjects(new UIImageButton(handler.getWidth()/2+90, 400, 30, 10, Images.Blue, () -> {
             handler.getMouseManager().setUimanager(null);
-            State.setState(handler.getGame().menuState);
+            
         }));
         
         
@@ -50,18 +50,22 @@ public class OptionState extends State {
        
         uiManager.addObjects(new UIImageButton(handler.getWidth()/2-10, 450, 30, 10, Images.Red, () -> {
             handler.getMouseManager().setUimanager(null);
-            //DisplayScreen.getCanvas().setBackground(Color.RED)
-            //canvas.setBackground(Color.RED);
+         
+            DisplayScreen.ChangeColor(DisplayScreen.getCanvas(),Color.RED);
+            
+         
+            
         }));
         
         uiManager.addObjects(new UIImageButton(handler.getWidth()/2+40, 450, 30, 10, Images.Green, () -> {
             handler.getMouseManager().setUimanager(null);
-           // canvas.setBackground(Color.GREEN);
+           
+            DisplayScreen.ChangeColor(DisplayScreen.getCanvas(),Color.GREEN);
         }));
         
         uiManager.addObjects(new UIImageButton(handler.getWidth()/2+90, 450, 30, 10, Images.Blue, () -> {
             handler.getMouseManager().setUimanager(null);
-            //canvas.setBackground(Color.BLUE);
+            DisplayScreen.ChangeColor(DisplayScreen.getCanvas(),Color.BLUE);
         }));
         
         
