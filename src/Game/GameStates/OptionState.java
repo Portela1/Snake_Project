@@ -46,11 +46,13 @@ public class OptionState extends State {
         }));
         
         
+        
+        
+        
         //Back Color
        
         uiManager.addObjects(new UIImageButton(handler.getWidth()/2-10, 450, 30, 10, Images.Red, () -> {
             handler.getMouseManager().setUimanager(null);
-         
             DisplayScreen.ChangeColor(DisplayScreen.getCanvas(),Color.RED);
             
          
@@ -59,7 +61,6 @@ public class OptionState extends State {
         
         uiManager.addObjects(new UIImageButton(handler.getWidth()/2+40, 450, 30, 10, Images.Green, () -> {
             handler.getMouseManager().setUimanager(null);
-           
             DisplayScreen.ChangeColor(DisplayScreen.getCanvas(),Color.GREEN);
         }));
         
