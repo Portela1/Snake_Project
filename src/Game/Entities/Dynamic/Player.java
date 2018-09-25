@@ -22,9 +22,15 @@ public class Player {
     public int yCoord;
 
     public int moveCounter;
-    public int speedSnake = 5;
+    public static int speedSnake = 5;
 
-    public static String direction;//is your first name one?
+    
+
+	public static void setSpeedSnake(int speed) {
+		speedSnake = speed;
+	}
+
+	public static String direction;//is your first name one?
 
     public Player(Handler handler){
         this.handler = handler;
@@ -52,7 +58,7 @@ public class Player {
 			speedSnake++;
 		}
 		if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_I)) { //pause snake
-			speedSnake = 200;
+			speedSnake = 1000;
 		}
 		if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_O)) { //return to default speed snake
 			speedSnake = 5;

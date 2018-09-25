@@ -9,6 +9,8 @@ import UI.UIManager;
 
 import java.awt.*;
 
+import Game.Entities.Dynamic.Player;
+
 /**
  * Created by AlexVR on 7/1/2018.
  */
@@ -16,12 +18,13 @@ public class OptionState extends State {
 
     private UIManager uiManager;
 
+  
     public OptionState(Handler handler) {
         super(handler);
         uiManager = new UIManager(handler);
         handler.getMouseManager().setUimanager(uiManager);
         
-        
+   
         
         //Snake Color
 
@@ -29,6 +32,7 @@ public class OptionState extends State {
         uiManager.addObjects(new UIImageButton(handler.getWidth()/2-10, 400, 30, 10, Images.Red, () -> {
             handler.getMouseManager().setUimanager(null);
             State.setState(handler.getGame().menuState);
+            
         }));
         
         uiManager.addObjects(new UIImageButton(handler.getWidth()/2+40, 400, 30, 10, Images.Green, () -> {
@@ -67,26 +71,30 @@ public class OptionState extends State {
         
         uiManager.addObjects(new UIImageButton(handler.getWidth()/2-10, 500, 10, 10, Images.One, () -> {
             handler.getMouseManager().setUimanager(null);
-            State.setState(handler.getGame().menuState);
+            Player.setSpeedSnake(9);
+           
         }));
         
         uiManager.addObjects(new UIImageButton(handler.getWidth()/2+20, 500, 10, 10, Images.Two, () -> {
             handler.getMouseManager().setUimanager(null);
-            State.setState(handler.getGame().menuState);
+            Player.setSpeedSnake(8);
+            
         }));
         
         uiManager.addObjects(new UIImageButton(handler.getWidth()/2+50, 500, 10, 10, Images.Three, () -> {
             handler.getMouseManager().setUimanager(null);
-            State.setState(handler.getGame().menuState);
+            Player.setSpeedSnake(7);
+          
         }));
         uiManager.addObjects(new UIImageButton(handler.getWidth()/2+80, 500, 10, 10, Images.Four, () -> {
             handler.getMouseManager().setUimanager(null);
-            State.setState(handler.getGame().menuState);
+            Player.setSpeedSnake(5);
+            
         }));
         
         uiManager.addObjects(new UIImageButton(handler.getWidth()/2+110, 500, 10, 10, Images.Five, () -> {
             handler.getMouseManager().setUimanager(null);
-            State.setState(handler.getGame().menuState);
+            Player.setSpeedSnake(3);
         }));
         
         
