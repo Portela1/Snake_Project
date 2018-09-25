@@ -14,113 +14,132 @@ import Game.GameStates.State;
  */
 public class Player {
 
-    public int lenght;
-    public boolean justAte;
-    private Handler handler;
+	public int lenght;
+	public boolean justAte;
+	private Handler handler;
 
-    public int xCoord;
-    public int yCoord;
+	public int xCoord;
+	public int yCoord;
 
-    public int moveCounter;
-    public static int speedSnake = 5;
+	public int moveCounter;
 
-    
+	public static int speedSnake = 5;
+	public int snakeScore = 0;
 
 	public static void setSpeedSnake(int speed) {
 		speedSnake = speed;
 	}
 
-	public static String direction;//is your first name one?
+	public static String direction;// is your first name one?
 
-    public Player(Handler handler){
-        this.handler = handler;
-        xCoord = 0;
-        yCoord = 0;
-        moveCounter = 0;
-        direction= "Right";
-        justAte = false;
-        lenght= 1;
+	public Player(Handler handler) {
+		this.handler = handler;
+		xCoord = 0;
+		yCoord = 0;
+		moveCounter = 0;
+		direction = "Right";
+		justAte = false;
+		lenght = 1;
 
-    }
+	}
 
-    public void tick(){
-    	
-        int x = xCoord;
-        int y = yCoord;
-    	
+	public void tick() {
+
+		int x = xCoord;
+		int y = yCoord;
+
 		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_N)) { // add tail
-            handler.getWorld().body.add(new Tail(x, y,handler));
+			handler.getWorld().body.add(new Tail(x, y, handler));
+			lenght++;
 		}
-		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_EQUALS)){ // increase snake speed
-			speedSnake--;	
-		} 
-		if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_MINUS)) { // decrease snake speed
+		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_EQUALS)) { // increase snake speed
+			speedSnake--;
+		}
+		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_MINUS)) { // decrease snake speed
 			speedSnake++;
 		}
-		if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_I)) { //pause snake
+		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_I)) { // pause snake
 			speedSnake = 1000;
 		}
-		if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_O)) { //return to default speed snake
+		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_O)) { // return to default speed snake
 			speedSnake = 5;
 		}
-	
-		
-		
-		
-		
-        moveCounter++;
-        if(moveCounter>=speedSnake) {
-            checkCollisionAndMove();
-            moveCounter=2; //Change snake Speed
-        }
-        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_UP)){
-        	if(direction == "Down")
-        	{
-        		State.setState(handler.getGame().gameOverState);                    
-        	}
-        	else {
-        		direction="Up";
-        	}
-            
-        }if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_DOWN)){
-        	if(direction == "Up")
-        	{
-        		State.setState(handler.getGame().gameOverState);
-        	}
-        	else {
-        		direction="Down";
-        	}
-      
-        }if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_LEFT)){
-            if(direction == "Right")
-        	{
-        		State.setState(handler.getGame().gameOverState);
-        	}
-        	else {
-        		direction="Left";
-        	}
-   
-        }if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_RIGHT)){
-        	 if(direction == "Left")
-         	{
-         		State.setState(handler.getGame().gameOverState);
-         	}															
-         	else {
-         		direction="Right";
-         	}
-        }
-    }
+
+		moveCounter++;
+
+		if (moveCounter >= speedSnake) {
+			checkCollisionAndMove();
+			moveCounter = 2; // Change snake Speed
+		}
+		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_UP)) {
+			if (direction == "Down") {
+				State.setState(handler.getGame().gameOverState);
+			} else {
+				direction = "Up";
+			}
+
+		}
+		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_DOWN)) {
+			if (direction == "Up") {
+				State.setState(handler.getGame().gameOverState);
+			} else {
+				direction = "Down";
+			}
+
+		}
+		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_LEFT)) {
+			if (direction == "Right") {
+				State.setState(handler.getGame().gameOverState);
+			} else {
+				direction = "Left";
+			}
+
+		}
+		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_RIGHT)) {
+			if (direction == "Left") {
+				State.setState(handler.getGame().gameOverState);
+			} else {
+				direction = "Right";
+			}
+
+		}
+
+		if (moveCounter >= speedSnake) {
+			checkCollisionAndMove();
+			moveCounter = 2; // Change snake Speed
+		}
+		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_UP)) {
+			if (direction != "Down") { //Prevent Backtracking
+				direction = "Up";
+			}
+
+		}
+		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_DOWN)) {
+			if (direction != "Up") { //Prevent Backtracking
+				direction = "Down";
+			}
+
+		}
+		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_RIGHT)) {
+			if (direction != "Left") { //Prevent Backtracking
+				direction = "Right";
+			}
+
+		}
+		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_LEFT)) {
+			if (direction != "Right") { //Prevent Backtracking
+				direction = "Left";
+			}
+		}
+	}
+
 
     public void checkCollisionAndMove(){
         handler.getWorld().playerLocation[xCoord][yCoord]=false;
         int x = xCoord;
         int y = yCoord;
         
-		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_EQUALS)) {
-			moveCounter = 3;
-		} else if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_LESS)) {
-			moveCounter = 1;
-		}
+
         switch (direction){
             case "Left":
                 if(xCoord==0){
@@ -176,7 +195,11 @@ public class Player {
                             (j*handler.getWorld().GridPixelsize),
                             handler.getWorld().GridPixelsize,
                             handler.getWorld().GridPixelsize);
+   
                 }
+//                g.setColor(Color.RED);
+//                g.setFont (new Font("arial", Font.BOLD, 14));
+//                g.drawString("SCORE: " +snakeScore, 540, 20);
 
             }
         }
@@ -186,6 +209,7 @@ public class Player {
 
     public void Eat(){
         lenght++;
+        snakeScore++;
         Tail tail= null;
         handler.getWorld().appleLocation[xCoord][yCoord]=false;
         handler.getWorld().appleOnBoard=false;
