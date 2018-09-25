@@ -17,7 +17,7 @@ import Game.Entities.Dynamic.Player;
 public class OptionState extends State {
 
     private UIManager uiManager;
-
+    private Canvas canvas;
   
     public OptionState(Handler handler) {
         super(handler);
@@ -47,59 +47,47 @@ public class OptionState extends State {
         
         
         //Back Color
-        
-     
+       
         uiManager.addObjects(new UIImageButton(handler.getWidth()/2-10, 450, 30, 10, Images.Red, () -> {
             handler.getMouseManager().setUimanager(null);
-            State.setState(handler.getGame().menuState);
+            //DisplayScreen.getCanvas().setBackground(Color.RED)
+            //canvas.setBackground(Color.RED);
         }));
         
         uiManager.addObjects(new UIImageButton(handler.getWidth()/2+40, 450, 30, 10, Images.Green, () -> {
             handler.getMouseManager().setUimanager(null);
-            State.setState(handler.getGame().menuState);
+           // canvas.setBackground(Color.GREEN);
         }));
         
         uiManager.addObjects(new UIImageButton(handler.getWidth()/2+90, 450, 30, 10, Images.Blue, () -> {
             handler.getMouseManager().setUimanager(null);
-            State.setState(handler.getGame().menuState);
+            //canvas.setBackground(Color.BLUE);
         }));
         
         
         
         //Snake Speed
         
-        
         uiManager.addObjects(new UIImageButton(handler.getWidth()/2-10, 500, 10, 10, Images.One, () -> {
             handler.getMouseManager().setUimanager(null);
             Player.setSpeedSnake(9);
-           
-        }));
-        
+        })); 
         uiManager.addObjects(new UIImageButton(handler.getWidth()/2+20, 500, 10, 10, Images.Two, () -> {
             handler.getMouseManager().setUimanager(null);
-            Player.setSpeedSnake(8);
-            
+            Player.setSpeedSnake(8); 
         }));
-        
         uiManager.addObjects(new UIImageButton(handler.getWidth()/2+50, 500, 10, 10, Images.Three, () -> {
             handler.getMouseManager().setUimanager(null);
             Player.setSpeedSnake(7);
-          
         }));
         uiManager.addObjects(new UIImageButton(handler.getWidth()/2+80, 500, 10, 10, Images.Four, () -> {
             handler.getMouseManager().setUimanager(null);
-            Player.setSpeedSnake(5);
-            
+            Player.setSpeedSnake(6);  
         }));
-        
         uiManager.addObjects(new UIImageButton(handler.getWidth()/2+110, 500, 10, 10, Images.Five, () -> {
             handler.getMouseManager().setUimanager(null);
             Player.setSpeedSnake(3);
         }));
-        
-        
-        
-        
         
         
         uiManager.addObjects(new UIImageButton(handler.getWidth()/2-55, handler.getHeight()/2-32, 128, 64, Images.butstart, new ClickListlener() {
