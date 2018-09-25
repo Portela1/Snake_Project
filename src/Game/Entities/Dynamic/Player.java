@@ -72,43 +72,6 @@ public class Player {
 			moveCounter = 2; // Change snake Speed
 		}
 		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_UP)) {
-			if (direction == "Down") {
-				State.setState(handler.getGame().gameOverState);
-			} else {
-				direction = "Up";
-			}
-
-		}
-		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_DOWN)) {
-			if (direction == "Up") {
-				State.setState(handler.getGame().gameOverState);
-			} else {
-				direction = "Down";
-			}
-
-		}
-		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_LEFT)) {
-			if (direction == "Right") {
-				State.setState(handler.getGame().gameOverState);
-			} else {
-				direction = "Left";
-			}
-
-		}
-		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_RIGHT)) {
-			if (direction == "Left") {
-				State.setState(handler.getGame().gameOverState);
-			} else {
-				direction = "Right";
-			}
-
-		}
-
-		if (moveCounter >= speedSnake) {
-			checkCollisionAndMove();
-			moveCounter = 2; // Change snake Speed
-		}
-		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_UP)) {
 			if (direction != "Down") { //Prevent Backtracking
 				direction = "Up";
 			}
