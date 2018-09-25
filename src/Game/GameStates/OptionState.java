@@ -50,12 +50,12 @@ public class OptionState extends State {
             State.setState(handler.getGame().menuState);
         }));
         
-        uiManager.addObjects(new UIImageButton(handler.getWidth()/2+45, 450, 30, 10, Images.Green, () -> {
+        uiManager.addObjects(new UIImageButton(handler.getWidth()/2+40, 450, 30, 10, Images.Green, () -> {
             handler.getMouseManager().setUimanager(null);
             State.setState(handler.getGame().menuState);
         }));
         
-        uiManager.addObjects(new UIImageButton(handler.getWidth()/2+95, 450, 30, 10, Images.Blue, () -> {
+        uiManager.addObjects(new UIImageButton(handler.getWidth()/2+90, 450, 30, 10, Images.Blue, () -> {
             handler.getMouseManager().setUimanager(null);
             State.setState(handler.getGame().menuState);
         }));
