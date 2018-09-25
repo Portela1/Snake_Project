@@ -20,9 +20,19 @@ public class Images {
     public static BufferedImage[] Options;
 //    public static BufferedImage[] BMainMenu;
     public static ImageIcon icon;
+    
+    
     public static BufferedImage[] Red; //Added
     public static BufferedImage[] Blue; //Added
     public static BufferedImage[] Green; //Added
+    public static BufferedImage[] One; //Added
+    public static BufferedImage[] Two; //Added
+    public static BufferedImage[] Three; //Added
+    public static BufferedImage[] Four; //Added
+    public static BufferedImage[] Five; //Added
+   
+    
+    
     public static BufferedImage backgroundc; //Added
     public static BufferedImage speed; //Added
     public static BufferedImage snakec; //Added
@@ -39,6 +49,13 @@ public class Images {
         Blue = new BufferedImage[2]; //Added
         Green = new BufferedImage[2]; //Added
         
+        One = new BufferedImage[2];//Added
+        Two = new BufferedImage[2]; //Added
+        Three = new BufferedImage[2]; //Added
+        Four = new BufferedImage[2];//Added
+        Five = new BufferedImage[2]; //Added
+        
+        
         try {
         	
         	
@@ -50,6 +67,24 @@ public class Images {
         	
         	Green[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/green.png"));
         	Green[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/green.png"));
+        	
+        	One[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/1.png"));
+        	One[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/1.png"));
+        	
+        	Two[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/2.png"));
+        	Two[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/2.png"));
+        	
+        	Three[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/3.png"));
+        	Three[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/3.png"));
+        	
+        	Four[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/4.png"));
+        	Four[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/4.png"));
+        	
+        	Five[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/5.png"));
+        	Five[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/5.png"));
+        	
+        	
+        	
         	
         	speed = ImageIO.read(getClass().getResourceAsStream("/Sheets/Speed.png"));
         	backgroundc = ImageIO.read(getClass().getResourceAsStream("/Sheets/Backgorund.png"));

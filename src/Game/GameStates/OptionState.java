@@ -65,6 +65,32 @@ public class OptionState extends State {
         //Snake Speed
         
         
+        uiManager.addObjects(new UIImageButton(handler.getWidth()/2-10, 500, 10, 10, Images.One, () -> {
+            handler.getMouseManager().setUimanager(null);
+            State.setState(handler.getGame().menuState);
+        }));
+        
+        uiManager.addObjects(new UIImageButton(handler.getWidth()/2+20, 500, 10, 10, Images.Two, () -> {
+            handler.getMouseManager().setUimanager(null);
+            State.setState(handler.getGame().menuState);
+        }));
+        
+        uiManager.addObjects(new UIImageButton(handler.getWidth()/2+50, 500, 10, 10, Images.Three, () -> {
+            handler.getMouseManager().setUimanager(null);
+            State.setState(handler.getGame().menuState);
+        }));
+        uiManager.addObjects(new UIImageButton(handler.getWidth()/2+80, 500, 10, 10, Images.Four, () -> {
+            handler.getMouseManager().setUimanager(null);
+            State.setState(handler.getGame().menuState);
+        }));
+        
+        uiManager.addObjects(new UIImageButton(handler.getWidth()/2+110, 500, 10, 10, Images.Five, () -> {
+            handler.getMouseManager().setUimanager(null);
+            State.setState(handler.getGame().menuState);
+        }));
+        
+        
+        
         
         
         
@@ -89,7 +115,6 @@ public class OptionState extends State {
     public void render(Graphics g) {
         g.setColor(Color.darkGray);
         g.fillRect(0,0,handler.getWidth(),handler.getHeight());
-        
         g.drawImage(Images.title,0,0,handler.getWidth(),handler.getHeight(),null);
         g.drawImage(Images.speed , handler.getWidth()/2-90 , 490, 60 , 30 ,null);
         g.drawImage(Images.backgroundc,handler.getWidth()/2-90, 440,60,30,null); 
