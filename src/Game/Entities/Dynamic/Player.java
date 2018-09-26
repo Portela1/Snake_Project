@@ -25,7 +25,7 @@ public class Player {
 
 	public static int speedSnake = 5;
 	public int snakeScore = 0;
-
+	
 	public static void setSpeedSnake(int speed) {
 		speedSnake = speed;
 	}
@@ -156,32 +156,34 @@ public class Player {
         }
         	
     }
-    
-   
-    
-    
-    public void render(Graphics g,Boolean[][] playeLocation){
-        Random r = new Random();
-        for (int i = 0; i < handler.getWorld().GridWidthHeightPixelCount; i++) {
-            for (int j = 0; j < handler.getWorld().GridWidthHeightPixelCount; j++) {
-                g.setColor(Color.GREEN); //Change snake color
-
-                if(playeLocation[i][j]||handler.getWorld().appleLocation[i][j]){
-                    g.fillRect((i*handler.getWorld().GridPixelsize),
-                            (j*handler.getWorld().GridPixelsize),
-                            handler.getWorld().GridPixelsize,
-                            handler.getWorld().GridPixelsize);
-   
-                }
-//                g.setColor(Color.RED);
-//                g.setFont (new Font("arial", Font.BOLD, 14));
-//                g.drawString("SCORE: " +snakeScore, 540, 20);
-
-            }
-        }
 
 
-    }
+	public void render(Graphics g, Boolean[][] playeLocation) {
+		Random r = new Random();
+
+		// Implement RandomColor;
+		int blue = r.nextInt(256);
+		int green = r.nextInt(256);
+		int red = r.nextInt(256);
+
+		for (int i = 0; i < handler.getWorld().GridWidthHeightPixelCount; i++) {
+			for (int j = 0; j < handler.getWorld().GridWidthHeightPixelCount; j++) {
+				Color color = new Color(red, blue, green); // random color
+				g.setColor(color); // Change snake color
+
+				if (playeLocation[i][j] || handler.getWorld().appleLocation[i][j]) {
+					g.fillRect((i * handler.getWorld().GridPixelsize), (j * handler.getWorld().GridPixelsize),
+							handler.getWorld().GridPixelsize, handler.getWorld().GridPixelsize);
+
+					g.setColor(Color.WHITE);
+					g.drawString("SCORE: " + snakeScore, 500, 20);
+
+				}
+
+			}
+
+		}
+	}
 
     public void Eat(){
         lenght++;
@@ -301,6 +303,7 @@ public class Player {
 
                 handler.getWorld().playerLocation[i][j]=true;
                 State.setState(handler.getGame().gameOverState);
+                speedSnake = 5;
                 
       
 
