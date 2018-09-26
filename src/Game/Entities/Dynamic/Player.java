@@ -144,14 +144,7 @@ public class Player {
             handler.getWorld().body.removeLast();
             handler.getWorld().body.addFirst(new Tail(x, y,handler));
         }
-//		while (lenght > 1) {
-//			for (int i = 0; i < handler.getWorld().GridWidthHeightPixelCount; i++) {
-//					if ((handler.get == handler.getWorld().player.xCoord && (yCoord == handler.getWorld().player.yCoord))) {
-//						kill();
-//
-//					}
-//				}
-//			}
+
 		}
 
 	public void render(Graphics g, Boolean[][] playeLocation) {
