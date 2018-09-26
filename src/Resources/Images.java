@@ -13,6 +13,7 @@ public class Images {
 
     public static BufferedImage[] butstart;
     public static BufferedImage title;
+    
     public static BufferedImage optionbackw;
     public static BufferedImage Pause;
     public static BufferedImage GameOver;
@@ -36,7 +37,7 @@ public class Images {
    
     
     
-    public static BufferedImage backgroundc; //Added
+    public static BufferedImage backcolor; //Added
     public static BufferedImage speed; //Added
    
     
@@ -109,7 +110,7 @@ public class Images {
         	
         	
         	speed = ImageIO.read(getClass().getResourceAsStream("/Sheets/Speed.png"));
-        	backgroundc = ImageIO.read(getClass().getResourceAsStream("/Sheets/Backgorund.png"));
+        	backcolor = ImageIO.read(getClass().getResourceAsStream("/Sheets/backcolor.png"));
         	
         	
             title = ImageIO.read(getClass().getResourceAsStream("/Sheets/Title.png"));

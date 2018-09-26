@@ -15,12 +15,12 @@ import Game.Entities.Dynamic.Player;
 /**
  * Created by AlexVR on 7/1/2018.
  */
-public class OptionState extends State {
+public class OptionStateMenu extends State {
 
     private UIManager uiManager;
     private Canvas canvas;
   
-    public OptionState(Handler handler) {
+    public OptionStateMenu(Handler handler) {
         super(handler);
         uiManager = new UIManager(handler);
         handler.getMouseManager().setUimanager(uiManager);
@@ -29,13 +29,7 @@ public class OptionState extends State {
         
         
         
-        //Resume
-        
-        
-        uiManager.addObjects(new UIImageButton(handler.getWidth()/2-50, 550, 128, 64, Images.Resume, () -> {
-            handler.getMouseManager().setUimanager(null);
-            State.setState(handler.getGame().gameState);
-        }));
+     
         
         
         

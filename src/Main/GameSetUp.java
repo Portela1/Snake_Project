@@ -5,6 +5,7 @@ import Game.GameStates.GameOverState;
 import Game.GameStates.GameState;
 import Game.GameStates.MenuState;
 import Game.GameStates.OptionState;
+import Game.GameStates.OptionStateMenu;
 import Game.GameStates.PauseState;
 import Game.GameStates.State;
 import Input.KeyManager;
@@ -50,7 +51,7 @@ public class GameSetUp implements Runnable {
     public State pauseState;
 
     public State optionState; //Option State added
-
+    public State optionStateMenu;
     public State gameOverState;
     
 
@@ -91,7 +92,7 @@ public class GameSetUp implements Runnable {
         menuState = new MenuState(handler);
         pauseState = new PauseState(handler);
         optionState = new OptionState(handler); // Option State added
-
+        optionStateMenu = new OptionStateMenu(handler);
       
   
         
