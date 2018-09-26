@@ -5,6 +5,7 @@ import Resources.Images;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.util.LinkedList;
 import java.util.Random;
 
 import Game.GameStates.State;
@@ -20,7 +21,6 @@ public class Player {
 
 	public int xCoord;
 	public int yCoord;
-
 	public int moveCounter;
 
 	public static int speedSnake = 5;
@@ -103,6 +103,7 @@ public class Player {
         int y = yCoord;
         
 
+        
         switch (direction){
             case "Left":
                 if(xCoord==0){
@@ -133,6 +134,15 @@ public class Player {
                 }
                 break;
 		}
+        
+        for(int i = 0; i < handler.getWorld().body.size(); i++)
+        {
+        	if(handler.getWorld().body.get(i).x == xCoord && handler.getWorld().body.get(i).y == yCoord)
+        	{
+        		kill();
+        	}
+        }
+        
 		handler.getWorld().playerLocation[xCoord][yCoord] = true;
         
         if(handler.getWorld().appleLocation[xCoord][yCoord]){
@@ -144,7 +154,7 @@ public class Player {
             handler.getWorld().body.removeLast();
             handler.getWorld().body.addFirst(new Tail(x, y,handler));
         }
-
+        	
     }
     
    
@@ -278,6 +288,7 @@ public class Player {
                 }
                 break;
         }
+        
 
         handler.getWorld().body.addLast(tail);
         handler.getWorld().playerLocation[tail.x][tail.y] = false;
