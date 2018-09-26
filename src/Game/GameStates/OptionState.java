@@ -39,24 +39,7 @@ public class OptionState extends State {
         
         
         
-        //Snake Color
-
-
-        uiManager.addObjects(new UIImageButton(handler.getWidth()/2-10, 400, 30, 10, Images.Red, () -> {
-            handler.getMouseManager().setUimanager(null);
-            //g.setColor(Color.GREEN);
-        }));
-        
-        uiManager.addObjects(new UIImageButton(handler.getWidth()/2+40, 400, 30, 10, Images.Green, () -> {
-            handler.getMouseManager().setUimanager(null);
-            
-        }));
-        
-        uiManager.addObjects(new UIImageButton(handler.getWidth()/2+90, 400, 30, 10, Images.Blue, () -> {
-            handler.getMouseManager().setUimanager(null);
-            
-        }));
-       
+    
         
           
         //Back Color
@@ -126,7 +109,7 @@ public class OptionState extends State {
         g.drawImage(Images.title,0,0,handler.getWidth(),handler.getHeight(),null);
         g.drawImage(Images.speed , handler.getWidth()/2-90 , 490, 60 , 30 ,null);
         g.drawImage(Images.backgroundc,handler.getWidth()/2-90, 440,60,30,null); 
-        g.drawImage(Images.snakec,handler.getWidth()/2-90,390,60,30,null);
+        
         uiManager.Render(g);
 
     }

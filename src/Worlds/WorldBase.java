@@ -55,7 +55,7 @@ public abstract class WorldBase {
 
         for (int i = 0; i <= 660; i = i + GridPixelsize) {
 
-            g.setColor(Color.BLACK); // Changes Lines Color
+            g.setColor(Color.GRAY); // Changes Lines Color
             g.drawLine(0, i, handler.getWidth() , i);
             g.drawLine(i,0,i,handler.getHeight());
 

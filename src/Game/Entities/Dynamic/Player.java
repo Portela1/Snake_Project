@@ -146,7 +146,10 @@ public class Player {
         }
 
     }
-
+    
+   
+    
+    
     public void render(Graphics g,Boolean[][] playeLocation){
         Random r = new Random();
         for (int i = 0; i < handler.getWorld().GridWidthHeightPixelCount; i++) {
