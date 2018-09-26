@@ -43,43 +43,50 @@ public class OptionState extends State {
         
           
         //Back Color
-       
-        uiManager.addObjects(new UIImageButton(handler.getWidth()/2-10, 450, 30, 10, Images.Red, () -> {
+    
+        
+        uiManager.addObjects(new UIImageButton(handler.getWidth()/2-13, 450, 25, 25, Images.Red, () -> {
             handler.getMouseManager().setUimanager(null);
             DisplayScreen.ChangeColor(DisplayScreen.getCanvas(),Color.RED);
         }));
         
-        uiManager.addObjects(new UIImageButton(handler.getWidth()/2+40, 450, 30, 10, Images.Green, () -> {
+        uiManager.addObjects(new UIImageButton(handler.getWidth()/2+22, 450, 25, 25, Images.Green, () -> {
             handler.getMouseManager().setUimanager(null);
             DisplayScreen.ChangeColor(DisplayScreen.getCanvas(),Color.GREEN);
         }));
         
-        uiManager.addObjects(new UIImageButton(handler.getWidth()/2+90, 450, 30, 10, Images.Blue, () -> {
+        uiManager.addObjects(new UIImageButton(handler.getWidth()/2+57, 450, 25, 25, Images.Blue, () -> {
             handler.getMouseManager().setUimanager(null);
             DisplayScreen.ChangeColor(DisplayScreen.getCanvas(),Color.BLUE);
         }));
+ 
+        uiManager.addObjects(new UIImageButton(handler.getWidth()/2+92, 450, 25, 25, Images.Yellow, () -> {
+           handler.getMouseManager().setUimanager(null);
+           DisplayScreen.ChangeColor(DisplayScreen.getCanvas(),Color.YELLOW);
+        }));
+        
         
         
         
         //Snake Speed
         
-        uiManager.addObjects(new UIImageButton(handler.getWidth()/2-10, 500, 10, 10, Images.One, () -> {
-            handler.getMouseManager().setUimanager(null);
-            Player.setSpeedSnake(9);
-        })); 
-        uiManager.addObjects(new UIImageButton(handler.getWidth()/2+20, 500, 10, 10, Images.Two, () -> {
-            handler.getMouseManager().setUimanager(null);
-            Player.setSpeedSnake(8); 
-        }));
-        uiManager.addObjects(new UIImageButton(handler.getWidth()/2+50, 500, 10, 10, Images.Three, () -> {
+        uiManager.addObjects(new UIImageButton(handler.getWidth()/2-17, 500, 20, 20, Images.One, () -> {
             handler.getMouseManager().setUimanager(null);
             Player.setSpeedSnake(7);
-        }));
-        uiManager.addObjects(new UIImageButton(handler.getWidth()/2+80, 500, 10, 10, Images.Four, () -> {
+        })); 
+        uiManager.addObjects(new UIImageButton(handler.getWidth()/2+13, 500, 20, 20, Images.Two, () -> {
             handler.getMouseManager().setUimanager(null);
-            Player.setSpeedSnake(6);  
+            Player.setSpeedSnake(6); 
         }));
-        uiManager.addObjects(new UIImageButton(handler.getWidth()/2+110, 500, 10, 10, Images.Five, () -> {
+        uiManager.addObjects(new UIImageButton(handler.getWidth()/2+43, 500, 20, 20, Images.Three, () -> {
+            handler.getMouseManager().setUimanager(null);
+            Player.setSpeedSnake(5);
+        }));
+        uiManager.addObjects(new UIImageButton(handler.getWidth()/2+73, 500, 20, 20, Images.Four, () -> {
+            handler.getMouseManager().setUimanager(null);
+            Player.setSpeedSnake(4);  
+        }));
+        uiManager.addObjects(new UIImageButton(handler.getWidth()/2+103, 500, 20, 20, Images.Five, () -> {
             handler.getMouseManager().setUimanager(null);
             Player.setSpeedSnake(3);
         }));
@@ -107,7 +114,7 @@ public class OptionState extends State {
         g.setColor(Color.darkGray);
         g.fillRect(0,0,handler.getWidth(),handler.getHeight());
         g.drawImage(Images.title,0,0,handler.getWidth(),handler.getHeight(),null);
-        g.drawImage(Images.speed , handler.getWidth()/2-90 , 490, 60 , 30 ,null);
+        g.drawImage(Images.speed , handler.getWidth()/2-90 , 495, 60 , 30 ,null);
         g.drawImage(Images.backgroundc,handler.getWidth()/2-90, 440,60,30,null); 
         
         uiManager.Render(g);
