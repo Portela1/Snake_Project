@@ -175,6 +175,7 @@ public class Player {
 					g.fillRect((i * handler.getWorld().GridPixelsize), (j * handler.getWorld().GridPixelsize),
 							handler.getWorld().GridPixelsize, handler.getWorld().GridPixelsize);
 
+					g.setFont (new Font("arial", Font.BOLD, 11));
 					g.setColor(Color.WHITE);
 					g.drawString("SCORE: " + snakeScore, 500, 20);
 
