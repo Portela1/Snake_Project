@@ -32,7 +32,7 @@ public class OptionState extends State {
         //Resume
         
         
-        uiManager.addObjects(new UIImageButton(handler.getWidth()/2-50, 550, 128, 64, Images.Resume, () -> {
+        uiManager.addObjects(new UIImageButton(55, 100, 128, 64, Images.Resume, () -> {
             handler.getMouseManager().setUimanager(null);
             State.setState(handler.getGame().gameState);
         }));
@@ -42,25 +42,25 @@ public class OptionState extends State {
     
         
           
-        //Back Color
+//Back Color
     
         
-        uiManager.addObjects(new UIImageButton(handler.getWidth()/2-13, 445, 25, 25, Images.Red, () -> {
+        uiManager.addObjects(new UIImageButton(160, 350, 60, 60, Images.Red, () -> {
             handler.getMouseManager().setUimanager(null);
             DisplayScreen.ChangeColor(DisplayScreen.getCanvas(),Color.RED);
         }));
         
-        uiManager.addObjects(new UIImageButton(handler.getWidth()/2+22, 445, 25, 25, Images.Green, () -> {
+        uiManager.addObjects(new UIImageButton(235, 350, 60, 60, Images.Green, () -> {
             handler.getMouseManager().setUimanager(null);
             DisplayScreen.ChangeColor(DisplayScreen.getCanvas(),Color.GREEN);
         }));
         
-        uiManager.addObjects(new UIImageButton(handler.getWidth()/2+57, 445, 25, 25, Images.Blue, () -> {
+        uiManager.addObjects(new UIImageButton(310, 350, 60, 60, Images.Blue, () -> {
             handler.getMouseManager().setUimanager(null);
             DisplayScreen.ChangeColor(DisplayScreen.getCanvas(),Color.BLUE);
         }));
  
-        uiManager.addObjects(new UIImageButton(handler.getWidth()/2+92, 445, 25, 25, Images.Yellow, () -> {
+        uiManager.addObjects(new UIImageButton(385, 350, 60, 60, Images.Yellow, () -> {
            handler.getMouseManager().setUimanager(null);
            DisplayScreen.ChangeColor(DisplayScreen.getCanvas(),Color.YELLOW);
         }));
@@ -70,29 +70,30 @@ public class OptionState extends State {
         
         //Snake Speed
         
-        uiManager.addObjects(new UIImageButton(handler.getWidth()/2-17, 500, 20, 20, Images.One, () -> {
+        uiManager.addObjects(new UIImageButton(130, 500, 60, 60, Images.One, () -> {
             handler.getMouseManager().setUimanager(null);
             Player.setSpeedSnake(7);
         })); 
-        uiManager.addObjects(new UIImageButton(handler.getWidth()/2+13, 500, 20, 20, Images.Two, () -> {
+        uiManager.addObjects(new UIImageButton(205, 500, 60, 60, Images.Two, () -> {
             handler.getMouseManager().setUimanager(null);
             Player.setSpeedSnake(6); 
         }));
-        uiManager.addObjects(new UIImageButton(handler.getWidth()/2+43, 500, 20, 20, Images.Three, () -> {
+        uiManager.addObjects(new UIImageButton(280, 500, 60, 60, Images.Three, () -> {
             handler.getMouseManager().setUimanager(null);
             Player.setSpeedSnake(5);
         }));
-        uiManager.addObjects(new UIImageButton(handler.getWidth()/2+73, 500, 20, 20, Images.Four, () -> {
+        uiManager.addObjects(new UIImageButton(355, 500, 60, 60, Images.Four, () -> {
             handler.getMouseManager().setUimanager(null);
             Player.setSpeedSnake(4);  
         }));
-        uiManager.addObjects(new UIImageButton(handler.getWidth()/2+103, 500, 20, 20, Images.Five, () -> {
+        uiManager.addObjects(new UIImageButton(430, 500, 60, 60, Images.Five, () -> {
             handler.getMouseManager().setUimanager(null);
             Player.setSpeedSnake(3);
         }));
         
         
-        uiManager.addObjects(new UIImageButton(handler.getWidth()/2-55, handler.getHeight()/2-32, 128, 64, Images.butstart, new ClickListlener() {
+        
+        uiManager.addObjects(new UIImageButton(55, 32, 128, 64, Images.butstart, new ClickListlener() {
             @Override
             public void onClick() {
                 handler.getMouseManager().setUimanager(null);
@@ -113,9 +114,9 @@ public class OptionState extends State {
     public void render(Graphics g) {
         g.setColor(Color.darkGray);
         g.fillRect(0,0,handler.getWidth(),handler.getHeight());
-        g.drawImage(Images.title,0,0,handler.getWidth(),handler.getHeight(),null);
-        g.drawImage(Images.speed , handler.getWidth()/2-90 , 495, 60 , 30 ,null);
-        g.drawImage(Images.backcolor,handler.getWidth()/2-90, 440,60,30,null); 
+        g.drawImage(Images.gtitle,0,0,handler.getWidth(),handler.getHeight(),null);
+        g.drawImage(Images.speed , 10 , 500, 100 , 60 ,null);
+        g.drawImage(Images.backcolor,10, 350, 130 , 60,null); 
         
         uiManager.Render(g);
 
