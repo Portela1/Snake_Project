@@ -50,6 +50,10 @@ public class MenuState extends State {
         g.fillRect(0,0,handler.getWidth(),handler.getHeight());
         g.drawImage(Images.gtitle,0,0,handler.getWidth(),handler.getHeight(),null);
         uiManager.Render(g);
+        
+		g.setFont(new Font("arial", Font.BOLD, 64));
+		g.setColor(Color.BLACK);
+		g.drawString("PYTHON J & M" , 50, 150);
 
     }
 

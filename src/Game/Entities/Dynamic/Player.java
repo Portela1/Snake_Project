@@ -182,7 +182,7 @@ public class Player {
 
 				}
 				if (handler.getWorld().appleLocation[i][j]) {
-					g.setColor(Color.RED);
+					g.setColor(Color.cyan);
 					g.fillRect((i * handler.getWorld().GridPixelsize), (j * handler.getWorld().GridPixelsize),
 							handler.getWorld().GridPixelsize, handler.getWorld().GridPixelsize);
 
