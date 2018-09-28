@@ -18,8 +18,6 @@ import Game.Entities.Dynamic.Player;
 public class OptionStateMenu extends State {
 
     private UIManager uiManager;
-    private Canvas canvas;
-  
     public OptionStateMenu(Handler handler) {
         super(handler);
         uiManager = new UIManager(handler);

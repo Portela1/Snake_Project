@@ -12,9 +12,9 @@ public class Images {
 
 
     public static BufferedImage[] butstart;
-    public static BufferedImage title;
+  //  public static BufferedImage title;
     public static BufferedImage gtitle;
-    public static BufferedImage optionbackw;
+   // public static BufferedImage optionbackw;
     public static BufferedImage Pause;
     public static BufferedImage GameOver;
     public static BufferedImage[] Resume;
@@ -113,10 +113,10 @@ public class Images {
         	backcolor = ImageIO.read(getClass().getResourceAsStream("/Sheets/backcolor.png"));
         	
         	
-            title = ImageIO.read(getClass().getResourceAsStream("/Sheets/Title.png"));
+           // title = ImageIO.read(getClass().getResourceAsStream("/Sheets/Title.png"));
             gtitle = ImageIO.read(getClass().getResourceAsStream("/Sheets/gtitle.jpg"));
-            optionbackw = ImageIO.read(getClass().getResourceAsStream("/Sheets/optionbackw.png"));
-            Pause = ImageIO.read(getClass().getResourceAsStream("/Buttons/Pause.png"));
+          //  optionbackw = ImageIO.read(getClass().getResourceAsStream("/Sheets/optionbackw.png"));
+            Pause = ImageIO.read(getClass().getResourceAsStream("/Sheets/Pause.PNG"));
             GameOver = ImageIO.read(getClass().getResourceAsStream("/Buttons/GameOver.png")); //Game Over Image
             Resume[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/Resume.png"));
             Resume[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/ResumeP.png"));
